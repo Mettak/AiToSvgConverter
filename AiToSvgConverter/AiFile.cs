@@ -31,8 +31,6 @@ namespace AiToSvgConverter
         public List<PointF> HiResBoundingBox { get; set; } = new List<PointF>();
 
         public List<PointF> BoundingBox { get; set; } = new List<PointF>();
-
-        public List<PointF> AI3_Cropmarks { get; set; } = new List<PointF>();
     }
 
     public class AiFile

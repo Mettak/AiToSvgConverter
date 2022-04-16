@@ -50,7 +50,7 @@ namespace AiToSvgConverter
 
                 else
                 {
-                    throw new Exception($"Target file already exists! Use parameter --overwrite for overwriting existing files.");
+                    throw new Exception($@"Target file already exists! Use parameter ""--overwrite true"" for overwriting existing files.");
                 }
             }
 

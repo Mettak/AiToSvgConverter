@@ -58,23 +58,23 @@ namespace AiToSvgConverter
 
                         string currentInstruction = char.ToUpper(instruction.Operator).ToString();
                         List<string> instructionPoints = new List<string>();
+                        PointF centerPoint = new PointF
+                        {
+                            X = aiFile.Header.BoundingBox[1].X / 2,
+                            Y = aiFile.Header.BoundingBox[1].Y / 2
+                        };
+
                         foreach (var point in instruction.Parameters)
                         {
-                            PointF centerPoint = new PointF
+                            PointF centerPointOnY = new PointF
                             {
-                                X = aiFile.Header.BoundingBox[1].X / 2,
-                                Y = aiFile.Header.BoundingBox[1].Y / 2
+                                X = point.X,
+                                Y = centerPoint.Y
                             };
-                            PointF modifiedPoint = PointHelpers.RotatePoint(point, centerPoint, 180);
-                            PointF centerPointOnX = new PointF
-                            {
-                                X = centerPoint.X,
-                                Y = modifiedPoint.Y
-                            };
-                            Vector2 vectorOnX = Vector2.Subtract(new Vector2(centerPointOnX.X, centerPointOnX.Y),
-                                new Vector2(modifiedPoint.X, modifiedPoint.Y));
-                            Vector2 flippedPoint = Vector2.Add(new Vector2(centerPointOnX.X, centerPointOnX.Y), vectorOnX);
-                            modifiedPoint = new PointF
+                            Vector2 vectorOnY = Vector2.Subtract(new Vector2(centerPointOnY.X, centerPointOnY.Y),
+                                new Vector2(point.X, point.Y));
+                            Vector2 flippedPoint = Vector2.Add(new Vector2(centerPointOnY.X, centerPointOnY.Y), vectorOnY);
+                            PointF modifiedPoint = new PointF
                             {
                                 X = flippedPoint.X,
                                 Y = flippedPoint.Y
