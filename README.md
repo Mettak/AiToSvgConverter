@@ -1,8 +1,8 @@
 # AiToSvgConverter
-Simple console application for converting paths from Adobe Photoshop's "Paths to Illustrator..." (.ai) export button to Scalable Vector Graphics file (.svg)
+Simple console application for convert Adobe Photoshop's paths from Adobe Illustrator file (.ai) to Scalable Vector Graphics file (.svg)
 
 ## Why?
-If you are for some reason using older version of Adobe Photoshop (CS6 or older) you are probably may have asked yourself a question: "How can I export my paths from Photoshop to SVG without Adobe Illustrator?". If you've ever asked yourself this question, you've come to the right place.
+If you are for some reason using older version of Adobe Photoshop (CS6 or older) you are probably may have asked yourself a question: "How can I export my paths from Photoshop to SVG without Adobe Illustrator?". If you have, this could be something for you.
 
 ## Example
 
